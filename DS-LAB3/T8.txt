@@ -1,0 +1,8 @@
+def concatenate(L_head, L_tail, M_head, M_tail):
+    if L_tail:
+        L_tail.next = M_head
+    if M_head:
+        M_head.prev = L_tail
+    new_head = L_head if L_head else M_head
+    new_tail = M_tail if M_tail else L_tail
+    return new_head, new_tail
