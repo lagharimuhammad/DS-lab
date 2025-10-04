@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 struct Customer
@@ -142,3 +142,4 @@ int main()
 
     return 0;
 }
+
