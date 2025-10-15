@@ -17,7 +17,6 @@ private:
     int rear;
     int capacity;
     int size;
-
 public:
     OrderQueue(int cap)
     {
@@ -50,15 +49,13 @@ public:
             cout << "Queue is full" << orderId << endl;
             return false;
         }
-
         rear = (rear + 1) % capacity;
         orders[rear].orderId = orderId;
         orders[rear].itemId = itemId;
         orders[rear].quantity = quantity;
         orders[rear].tableNumber = tableNumber;
         size++;
-
-        cout << "Order added - ID: " << orderId << " Item: " << itemId << " Qty: " << quantity << " Table: " << tableNumber << endl;
+        cout << "ID: " << orderId << " Item: " << itemId << " Qty: " << quantity << " Table: " << tableNumber << endl;
         return true;
     }
 
@@ -69,12 +66,10 @@ public:
             cout << "Queue is empty" << endl;
             return false;
         }
-
         order = orders[front];
         front = (front + 1) % capacity;
         size--;
-
-        cout << "Order processed - ID: " << order.orderId << " Item: " << order.itemId << " Qty: " << order.quantity << " Table: " << order.tableNumber << endl;
+        cout << "ID: " << order.orderId << " Item: " << order.itemId << " Qty: " << order.quantity << " Table: " << order.tableNumber << endl;
         return true;
     }
 
@@ -89,10 +84,7 @@ public:
         int index = front;
         for (int i = 0; i < size; i++)
         {
-            cout << orders[index].orderId << "\t"
-                 << orders[index].itemId << "\t"
-                 << orders[index].quantity << "\t\t"
-                 << orders[index].tableNumber << endl;
+            cout << orders[index].orderId << orders[index].itemId << orders[index].quantity << orders[index].tableNumber << endl;
             index = (index + 1) % capacity;
         }
     }
@@ -240,4 +232,5 @@ int main()
     processedLog.displayProcessedOrders();
 
     return 0;
+
 }
