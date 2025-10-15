@@ -64,8 +64,9 @@ int main()
     }
     else
     {
-        cout << "PALINDROME" << endl;
+        cout << "NOT PALINDROME" << endl;
     }
 
     return 0;
+
 }
